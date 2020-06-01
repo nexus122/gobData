@@ -33,8 +33,12 @@
 
     <div *ngIf="error" class="pl-3">
       <div class="alert alert-danger" role="alert">
-        <p>😅 Vaya, parece que no tenemos mas datos que mostrarte !</p>    
-          <a class="nav-link" class="btn btn-outline-danger" [routerLink]="['home']">Home</a>      
+        <p>😅 Vaya, parece que no tenemos mas datos que mostrarte !</p>   
+        <p><small>Puedes intentar buscar otra cosa</small></p> 
+        <span class="row">
+        <app-search class="col-9"></app-search>        
+        <a class="nav-link col-2" class="btn btn-outline-danger" [routerLink]="['home']">Home</a>      
+      </span>
       </div>
     </div>
 
