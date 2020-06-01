@@ -1,0 +1,45 @@
+<div class="mt-5">
+  <h1 class="pl-5">Datos del gobierno de españa</h1>
+  <h3 class="pl-5">Busqueda: {{param}}</h3>
+
+  <span class="pagination pl-5 mb-3">
+    <span (click)="paginacion(1)"><i class="fas fa-chevron-circle-left mr-2"></i></span>
+    <span class="">Page:  {{page}}</span>
+    <span (click)="paginacion(2)"><i class="fas fa-chevron-circle-right ml-2"></i></span>
+  </span>
+
+  <div class="card-columns row pl-5 pr-5">
+
+    <div ng-If="error" class="card col-12" *ngFor="let c of data">    
+      <div class="card-body">
+        <h5 class="card-title">{{c.title}}</h5>
+        <p>{{c.description[0]._value}}</p>
+        <hr>
+
+        
+        <span class="row">
+          <span *ngIf="c.distribution.accessURL" class="col-1 align-middle pt-3 border-right"><a href="{{c.distribution.accessURL}}" target="_blank" class="btn btn-primary"><i class="fas fa-download"></i></a></span>
+          <span class="col-11">
+            <p><b>#Tags</b></p>  
+            <div class="d-inline" *ngFor="let key of c.keyword">        
+              <button (click)="cambioDeTermino(key)" class="badge badge-primary mr-1">{{key}}</button>
+            </div>    
+          </span>
+        </span>
+        
+
+      </div>
+    </div>
+
+    <div *ngIf="error" class="pl-3">
+      <div class="alert alert-danger" role="alert">
+        <p>😅 Vaya, parece que no tenemos mas datos que mostrarte !</p>    
+          <a class="nav-link" class="btn btn-outline-danger" [routerLink]="['home']">Home</a>      
+      </div>
+    </div>
+
+    <div *ngIf="spin" class="loader m-auto">
+      <h1><i class="fas fa-sync fa-spin"></i></h1>
+    </div>
+  </div>
+</div>
