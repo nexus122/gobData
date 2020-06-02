@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
 
   constructor() { }
-  searchWord: string = null
+  searchWord: string = null;
+
   ngOnInit() {
   }
+
   onKey(event) {
     this.searchWord = event.target.value;
     console.log(this.searchWord);

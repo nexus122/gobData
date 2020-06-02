@@ -1,0 +1,6 @@
+.page:hover{
+    color:#007bff
+}
+.page{
+    cursor: pointer;
+}
