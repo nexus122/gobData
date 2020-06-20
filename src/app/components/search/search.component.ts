@@ -13,8 +13,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  onKey(event) {
-    this.searchWord = event.target.value;
-    console.log(this.searchWord);
+  onKey(event) { // Este es un evento que se ejecuta cada vez que se pulse una tecla en el buscador
+    this.searchWord = event.target.value; // Actualizamos la variable global con la palabra escrita.    
   }
 }

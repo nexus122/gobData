@@ -8,15 +8,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
   title = "DatGob"
-  //searchWord: string = null
   constructor() { }
 
   ngOnInit() {
   }
-
-  //onKey(event) {
-  //  this.searchWord = event.target.value;
-  //  console.log(this.searchWord);
-  //}
 
 }
